@@ -1,0 +1,17 @@
+<% include _layouts/header %>
+
+<h3 class="text-center display-4" style="margin-bottom: 30px;"><%- title %></h3>
+<div class="row products">
+    <% products.forEach(product => { %>
+        <div class="col-xs-12 col-md-4 p">
+            <a href="/products/<%= product.category %>/<%= product.slug %>  " class="pa">
+                <img src="product_images/<%= product.id %>/<%= product.image %>  " alt="" class="pimage">
+            </a>
+            <h3><%= product.title %> </h3>
+            <h6>KSH <%= parseInt(product.price) %> </h4>
+            <a href="/products/<%= product.category %>/<%= product.slug %>" class="vd">View Details</a>
+        </div>
+    <% }) %>
+</div>
+
+<% include _layouts/footer %> 
