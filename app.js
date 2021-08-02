@@ -125,11 +125,6 @@ app.use('/cart', cart);
 app.use('/users', users);
 app.use('/', pagesRouter);
 
-app.get('*', (req, res, next)=>{
-  res.locals.cart = req.session.cart;
-  res.locals.users = req.user || null;
-  next();
-});
 
 
 // catch 404 and forward to error handler
